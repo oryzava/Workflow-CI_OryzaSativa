@@ -1,0 +1,13 @@
+name: submission-ml-advanced
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      n_estimators: {type: int, default: 100}
+      max_depth: {type: int, default: 10}
+      train_data: {type: string, default: "train_preprocessing.csv"}
+      test_data: {type: string, default: "test_preprocessing.csv"}
+    command: >
+      python modelling.py {n_estimators} {max_depth} {train_data} {test_data}
